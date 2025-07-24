@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   Promise.all([
-    loadComponent('/_includes/header.html', 'header-placeholder'),
-    loadComponent('/_includes/footer.html', 'footer-placeholder')
+    loadComponent('/components/header.html', 'header-placeholder'),
+    loadComponent('/components/footer.html', 'footer-placeholder')
   ]).then(() => {
     setActiveLink();
   });
