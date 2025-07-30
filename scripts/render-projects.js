@@ -16,7 +16,7 @@ export function renderProjects(selector, url) {
                     }
                     <div class="card-content">
                         <h3>${project.title}</h3>
-                        <p>${project.description} ...</p>
+                        <p>${project.description}</p>
                         <div class="tags">${project.tags.join(", ")}</div>
                     </div>
                 </a>
