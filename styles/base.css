@@ -1,6 +1,13 @@
+/* base.css - CORRECTED */
+
 * {
   box-sizing: border-box;
 }
+
+/* This rule is no longer necessary with the vh unit, you can remove it */
+/* html {
+  height: 100%;
+} */
 
 body {
   font-family: 'Inter', sans-serif;
@@ -9,6 +16,12 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+
+  /* --- REPLACE the old height/overflow rules WITH THESE --- */
+  min-height: 100vh; /* Set minimum height to 100% of the viewport height */
+  display: flex; /* Make the body a flex container */
+  flex-direction: column; /* Stack children (main, footer) vertically */
+  /* --- --- */
 }
 
 a {
@@ -17,7 +30,7 @@ a {
 }
 
 h1, h2, h3, h4 {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0 0;
 }
 
 img {

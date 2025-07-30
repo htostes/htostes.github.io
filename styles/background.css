@@ -1,9 +1,9 @@
+/* background.css - CORRECTED (but preferably handled by JS) */
 .bg-canvas {
-  position: fixed;
+  position: fixed; /* Use 'fixed' to position relative to viewport */
   top: 0;
   left: 0;
   z-index: -1;
-  width: 100%;
-  height: 100%;
   display: block;
+  /* Width and height are now set by JavaScript, do NOT set them here */
 }

@@ -1,10 +1,16 @@
+/* layout.css - CORRECTED */
+
 .main {
   display: grid;
   grid-template-columns: 320px 1fr;
   gap: calc(var(--space) * 4);
   max-width: var(--max-width);
-  margin: 5rem auto;
+  margin: 5rem auto 0 auto;
   padding: var(--space);
+
+  /* --- ADD THIS LINE --- */
+  flex: 1; /* Makes the main content grow to fill available space */
+  width: 100%; 
 }
 @media (max-width: 960px) {
   .main { grid-template-columns: 1fr; }
@@ -34,4 +40,15 @@
 }
 .cards.one-column {
   grid-template-columns: 1fr;
+}
+
+.footer {
+  text-align: center;
+  color: var(--color-subtle);
+  font-size: 0.9rem;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.05);
+  margin-top: 1rem;
+  position: relative;
+  z-index: 1;
+  background-color: var(--footer-bg, rgba(255, 255, 255, 0.05));
 }

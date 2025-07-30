@@ -1,4 +1,8 @@
 [
-  { "name": "GitHub", "url": "https://github.com/you", "icon": "github" },
-  { "name": "LinkedIn", "url": "https://linkedin.com/in/you", "icon": "linkedin" }
+  { "name": "GitHub", "url": "https://github.com/htostes", "icon": "github" },
+  { "name": "LinkedIn", "url": "https://www.linkedin.com/in/henrique-tostes/", "icon": "linkedin" },
+  { "name": "Medium", "url": "https://medium.com/@htostes", "icon": "medium" },
+  { "name": "Upwork", "url": "https://www.upwork.com/freelancers/~017a4613f3fe8608d3?mp_source=share", "icon": "upwork" },
+  { "name": "Gumroad", "url": "https://htostes.gumroad.com", "icon": "gumroad" },
+  { "name": "Donate", "url": "https://ko-fi.com/I2I31IJ3HP", "icon": "kofi" }
 ]

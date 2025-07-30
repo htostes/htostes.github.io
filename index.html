@@ -1,52 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Personal Website</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/tokens.css" />
-    <link rel="stylesheet" href="styles/base.css" />
-    <link rel="stylesheet" href="styles/layout.css" />
-    <link rel="stylesheet" href="styles/card.css" />
-    <link rel="stylesheet" href="styles/sidebar.css" />
-    <link rel="stylesheet" href="styles/background.css" />
-    <!-- <link rel="stylesheet" href="styles/modern.css" /> -->
-    <link rel="stylesheet" href="styles/glass.css" />
-  </head>
-  <body>
-    <div class="main fade-in">
-      <aside class="sidebar">
-        <img src="assets/me.png" alt="Minha Foto" class="avatar" />
-        <h1>Henrique Tostes</h1>
-        <p class="tagline">I'm a Machine learning engineer, Data scientist, and DevOps engineer; well, let's just say I like to program cool things! I also enjoy building tools to help non-tech people!</p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Henrique Tostes</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles/tokens.css" />
+        <link rel="stylesheet" href="styles/base.css" />
+        <link rel="stylesheet" href="styles/layout.css" />
+        <link rel="stylesheet" href="styles/card.css" />
+        <link rel="stylesheet" href="styles/sidebar.css" />
+        <link rel="stylesheet" href="styles/background.css" />
+        <link rel="stylesheet" href="styles/glass.css" />
+        <script
+            defer
+            src="https://cloud.umami.is/script.js"
+            data-website-id="2b1b0cf4-cd84-4bb4-b0aa-1ca7fe1e197e"
+        ></script>
+    </head>
+    <body>
+        <div class="main fade-in">
+            <aside class="sidebar">
+                <img src="assets/me.png" alt="Minha Foto" class="avatar" />
+                <h1>Henrique Tostes</h1>
+                <p class="tagline">
+                    I'm a Machine learning engineer, Software engineer, and
+                    DevOps engineer; well, I solve problems with code, it
+                    doesn't matter which.
+                </p>
 
-        <div id="social-links"></div>
+                <div id="social-links"></div>
 
-        <div class="cta-buttons">
-          <a href="#" class="button glass glass-sweep">Curso construindo um SaaS</a>
-          <a href="#" class="button glass glass-sweep">Template SaaS Next.js</a>
-          <a href="#" class="button glass glass-sweep">Agende uma mentoria</a>
+                <div class="cta-buttons">
+                    <a
+                        href="mailto:htostes99@gmail.com"
+                        class="button glass glass-sweep"
+                        target="_blank"
+                        >📩 Email me</a
+                    >
+                    <a
+                        href="https://cal.com/htostes"
+                        class="button glass glass-sweep"
+                        target="_blank"
+                        >📅 Book a call</a
+                    >
+                    <a
+                        href="https://www.canva.com/design/DAGupEd72wg/bsP96tdak4mWZFYKmH-tnQ/edit?utm_content=DAGupEd72wg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                        class="button glass glass-sweep"
+                        target="_blank"
+                        >📄 Resume</a
+                    >
+                </div>
+            </aside>
+            <section class="content">
+                <div class="content-switch">
+                    <a href="#" id="toggle-projects" class="toggle-link active"
+                        >Projects</a
+                    >
+                    <a href="#" id="toggle-articles" class="toggle-link"
+                        >Articles</a
+                    >
+                </div>
+                <div class="cards" id="projects-grid"></div>
+                <div
+                    class="cards one-column"
+                    id="articles-grid"
+                    style="display: none"
+                ></div>
+            </section>
         </div>
-      </aside>
-      <section class="content">
-        <div class="content-switch">
-          <a href="#" id="toggle-projects" class="toggle-link active"
-            >Projects</a
-          >
-          <a href="#" id="toggle-articles" class="toggle-link">Articles</a>
-        </div>
-        <div class="cards" id="projects-grid"></div>
-        <div
-          class="cards one-column"
-          id="articles-grid"
-          style="display: none"
-        ></div>
-      </section>
-    </div>
-    <script type="module" src="scripts/background.js"></script>
-    <script type="module" src="scripts/main.js"></script>
-  </body>
+        <script type="module" src="scripts/background.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+        <footer class="footer">
+            <p>© 2025 Henrique Tostes</p>
+        </footer>
+    </body>
 </html>

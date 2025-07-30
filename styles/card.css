@@ -65,3 +65,7 @@
   font-weight: bold;
   color: var(--color-accent);
 }
+
+.article-card a:hover {
+  opacity: 0.7;
+}
