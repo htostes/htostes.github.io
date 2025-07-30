@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Quick LLM",
+    "description": "Chrome extension that calls OpenAI-compatible endpoints with predefined commands.",
+    "logo": "assets/LLm.png",
+    "tags": ["Extension", "AI"],
+    "link": "https://github.com/htostes/quick-llm-extension"
+  },
+  {
+    "title": "Coming Soon",
+    "description": "Coming soon...",
+    "logo": "",
+    "tags": ["Coming", "soon"],
+    "link": ""
+  },
+  {
+    "title": "Coming Soon",
+    "description": "Coming soon...",
+    "logo": "",
+    "tags": ["Coming", "soon"],
+    "link": ""
+  },
+  {
+    "title": "Coming Soon",
+    "description": "Coming soon...",
+    "logo": "",
+    "tags": ["Coming", "soon"],
+    "link": ""
+  }
+]

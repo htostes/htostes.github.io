@@ -1,7 +1,7 @@
 .main {
   display: grid;
   grid-template-columns: 320px 1fr;
-  gap: var(--space);
+  gap: calc(var(--space) * 4);
   max-width: var(--max-width);
   margin: 5rem auto;
   padding: var(--space);
@@ -30,7 +30,7 @@
   gap: var(--space);
 }
 .cards:not(.one-column) {
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
 .cards.one-column {
   grid-template-columns: 1fr;

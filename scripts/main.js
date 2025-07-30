@@ -1,53 +1,29 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const loadComponent = async (url, elementId) => {
-    const response = await fetch(url);
-    const text = await response.text();
-    document.getElementById(elementId).innerHTML = text;
-  };
+import { renderProjects } from './render-projects.js';
+import { renderArticles } from './render-articles.js';
+import { renderSocials } from './render-socials.js';
 
-  const loadTimeline = async () => {
-    if (document.getElementById('timeline-container')) {
-      const { jobs } = await import('/scripts/jobs.js');
-      const timelineContainer = document.getElementById('timeline-container');
-      const timelineHTML = jobs.map(job => `
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <h3>${job.title}</h3>
-            <p><strong>${job.company}</strong> | ${job.period}</p>
-            <p>${job.description}</p>
-          </div>
-        </div>
-      `).join('');
-      timelineContainer.innerHTML = timelineHTML;
+renderProjects('#projects-grid', 'data/projects.json');
+renderArticles('#articles-grid', 'data/articles.json');
+renderSocials('#social-links', 'data/socials.json');
 
-      const timelineItems = document.querySelectorAll('.timeline-item');
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.5 });
-      timelineItems.forEach(item => observer.observe(item));
-    }
-  };
+const toggleProjects = document.getElementById('toggle-projects');
+const toggleArticles = document.getElementById('toggle-articles');
+const projectsGrid = document.getElementById('projects-grid');
+const articlesGrid = document.getElementById('articles-grid');
 
-  const setActiveLink = () => {
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const currentPath = window.location.pathname;
-    navLinks.forEach(link => {
-      if (link.getAttribute('href') === currentPath) {
-        link.classList.add('active');
-      }
-    });
-  };
+function switchTo(view) {
+  if (view === 'projects') {
+    projectsGrid.style.display = 'grid';
+    articlesGrid.style.display = 'none';
+    toggleProjects.classList.add('active');
+    toggleArticles.classList.remove('active');
+  } else {
+    projectsGrid.style.display = 'none';
+    articlesGrid.style.display = 'block';
+    toggleProjects.classList.remove('active');
+    toggleArticles.classList.add('active');
+  }
+}
 
-  Promise.all([
-    loadComponent('/components/header.html', 'header-placeholder'),
-    loadComponent('/components/footer.html', 'footer-placeholder')
-  ]).then(() => {
-    setActiveLink();
-  });
-
-  loadTimeline();
-});
+toggleProjects.addEventListener('click', e => { e.preventDefault(); switchTo('projects'); });
+toggleArticles.addEventListener('click', e => { e.preventDefault(); switchTo('articles'); });

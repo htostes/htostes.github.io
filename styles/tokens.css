@@ -1,0 +1,19 @@
+:root {
+  --color-bg: #0f111a;
+  --color-surface: #161b22;
+  --color-text: #e6e9f0;
+  --color-subtle: #94a3b8;
+  --color-accent: #22A7F0;
+  --color-accent-dark: #0F4C81;
+  --radius: 10px;
+  --font-sans: system-ui, sans-serif;
+  --space: 1rem;
+  --max-width: 1300px;
+
+  --glass-blur: 14px;
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-light: rgba(255, 255, 255, 0.1);
+  --glass-bg-start: rgba(60, 0, 80, 0.4);
+  --glass-bg-end: rgba(30, 0, 50, 0.25);
+  --glass-glow: rgba(34, 167, 240, 0.25); /* edge glow */
+}

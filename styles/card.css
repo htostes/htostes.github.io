@@ -1,0 +1,67 @@
+.card {
+  border-radius: var(--radius);
+  padding: calc(var(--space) * 1.5);
+  display: flex;
+  align-items: center;
+  gap: calc(var(--space) * 1.5);
+  text-decoration: none;
+  color: inherit;
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.card .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center text content vertically */
+  gap: 0.15rem; /* Compact spacing between text elements */
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-subtle);
+  line-height: 1.4;
+}
+
+.card .tags {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-accent);
+}
+
+.article-card {
+  border-radius: var(--radius);
+  padding: var(--space);
+}
+
+.article-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.article-card p {
+  color: var(--color-subtle);
+  font-size: 0.95rem;
+}
+
+.article-card a {
+  margin-top: 1rem;
+  display: inline-block;
+  font-weight: bold;
+  color: var(--color-accent);
+}

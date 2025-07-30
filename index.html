@@ -1,31 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Henrique Tostes</title>
-  <link rel="stylesheet" href="/styles/main.css" />
-</head>
-<body>
-  <div class="page-container">
-    <div id="header-placeholder"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Personal Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/card.css" />
+    <link rel="stylesheet" href="styles/sidebar.css" />
+    <link rel="stylesheet" href="styles/background.css" />
+    <!-- <link rel="stylesheet" href="styles/modern.css" /> -->
+    <link rel="stylesheet" href="styles/glass.css" />
+  </head>
+  <body>
+    <div class="main fade-in">
+      <aside class="sidebar">
+        <img src="assets/me.png" alt="Minha Foto" class="avatar" />
+        <h1>Henrique Tostes</h1>
+        <p class="tagline">I'm a Machine learning engineer, Data scientist, and DevOps engineer; well, let's just say I like to program cool things! I also enjoy building tools to help non-tech people!</p>
 
-    <main class="container">
-      <section class="hero">
-        <h1>Hi, I'm Henrique 👋</h1>
-        <p>
-          I'm a developer passionate about building tools, open source, and helping others through automation, AI, and good design.
-        </p>
-        <div class="buttons">
-          <a href="/about/" class="btn primary">Learn More</a>
-          <a href="/contact/" class="btn secondary">Get in Touch</a>
+        <div id="social-links"></div>
+
+        <div class="cta-buttons">
+          <a href="#" class="button glass glass-sweep">Curso construindo um SaaS</a>
+          <a href="#" class="button glass glass-sweep">Template SaaS Next.js</a>
+          <a href="#" class="button glass glass-sweep">Agende uma mentoria</a>
         </div>
+      </aside>
+      <section class="content">
+        <div class="content-switch">
+          <a href="#" id="toggle-projects" class="toggle-link active"
+            >Projects</a
+          >
+          <a href="#" id="toggle-articles" class="toggle-link">Articles</a>
+        </div>
+        <div class="cards" id="projects-grid"></div>
+        <div
+          class="cards one-column"
+          id="articles-grid"
+          style="display: none"
+        ></div>
       </section>
-    </main>
-
-    <div id="footer-placeholder"></div>
-  </div>
-
-  <script src="/scripts/main.js" type="module"></script>
-</body>
+    </div>
+    <script type="module" src="scripts/background.js"></script>
+    <script type="module" src="scripts/main.js"></script>
+  </body>
 </html>

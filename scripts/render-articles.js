@@ -4,7 +4,7 @@ export function renderArticles(selector, url) {
         .then(data => {
             const container = document.querySelector(selector);
             container.innerHTML = data.map(article => `
-                <div class="card">
+                <div class="article-card glass glass-sweep">
                     <h3>${article.title}</h3>
                     <p>${article.summary}</p>
                     <a href="${article.link}" target="_blank">Ler mais</a>
