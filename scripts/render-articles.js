@@ -18,13 +18,13 @@ export function renderArticles(selector, url) {
                         summary += paragraphs[0].textContent;
                     }
                     if (paragraphs.length > 1) {
-                        summary += " " + paragraphs[1].textContent;
+                        summary += " " + paragraphs[1].textContent + " ...";
                     }
 
                     return `
                 <div class="article-card glass glass-sweep">
                     <h3>${article.title}</h3>
-                    <p>${summary} ...</p>
+                    <p>${summary}</p>
                     <a href="${article.link}" target="_blank">Ler mais</a>
                 </div>
             `;
