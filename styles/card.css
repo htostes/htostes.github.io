@@ -6,7 +6,7 @@
   gap: calc(var(--space) * 1.5);
   text-decoration: none;
   color: inherit;
-  height: 160px;
+  height: auto;
   position: relative;
   overflow: hidden;
 }
@@ -68,4 +68,10 @@
 
 .article-card a:hover {
   opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .card, .article-card {
+    padding: var(--space);
+  }
 }
