@@ -14,7 +14,7 @@
   height: 192px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--color-accent);
+  border: 2px solid var(--glass-bg-end);
 }
 
 .sidebar .tagline {
