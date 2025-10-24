@@ -178,11 +178,11 @@ toggleArticles.addEventListener('click', e => { e.preventDefault(); switchTo('ar
 ```json
 [
   {
-    "title": "LeadYuu",
+    "title": "",
     "description": "Chatbot no WhatsApp para leads.",
-    "logo": "assets/images/leadyuu.png",
+    "logo": "assets/images/.png",
     "tags": ["WhatsApp", "Node.js"],
-    "links": { "demo": "https://leadyuu.com" }
+    "links": { "demo": "https://.com" }
   }
 ]
 ```
@@ -192,8 +192,8 @@ toggleArticles.addEventListener('click', e => { e.preventDefault(); switchTo('ar
 ```json
 [
   {
-    "title": "Como criei meu primeiro SaaS",
-    "summary": "Relato sobre como criei e lancei um produto SaaS em 3 semanas.",
+    "title": "Como criei meu primeiro ",
+    "summary": "Relato sobre como criei e lancei um produto.",
     "link": "https://dev.to/exemplo"
   }
 ]
