@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Para Você ❤️</title>
+
+        <style>
+            body {
+                margin: 0;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background: #0e0e0e;
+                color: white;
+                font-family: "Segoe UI", sans-serif;
+                overflow: hidden;
+            }
+
+            .top-text,
+            .bottom-text {
+                font-size: 0.5rem;
+                text-align: center;
+                margin: 30px 0;
+                z-index: 2;
+            }
+
+            svg {
+                width: min(80vw, 420px);
+                height: min(80vw, 420px);
+                z-index: 1;
+                overflow: visible;
+            }
+
+            /* Coração desenhando */
+            .heart-path {
+                fill: none;
+                stroke: #ff4d6d;
+                stroke-width: 6;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 1000;
+                animation: drawHeart 4s ease forwards;
+            }
+
+            @keyframes drawHeart {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+
+            /* Arco-íris */
+            .rainbow {
+                fill: none;
+                stroke-width: 14;
+                opacity: 0.8;
+                animation: rainbowMove 8s linear infinite;
+            }
+
+            @keyframes rainbowMove {
+                from {
+                    stroke-dashoffset: 300;
+                }
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+            @keyframes rainbowRightToLeft {
+                from {
+                    stroke-dashoffset: 0;
+                }
+                to {
+                    stroke-dashoffset: 300;
+                }
+            }
+
+            /* Imagem dentro do coração */
+            .heart-image {
+                animation: fadeImage 6s infinite;
+            }
+
+            @keyframes fadeImage {
+                0%,
+                100% {
+                    opacity: 0;
+                }
+                10%,
+                40% {
+                    opacity: 1;
+                }
+                50%,
+                90% {
+                    opacity: 0;
+                }
+            }
+            #lock-screen {
+                position: fixed;
+                inset: 0;
+                background: #0e0e0e;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+            }
+
+            #lock-screen input {
+                padding: 10px;
+                font-size: 1rem;
+                margin: 10px 0;
+                border-radius: 6px;
+                border: none;
+                outline: none;
+            }
+
+            #lock-screen button {
+                padding: 10px 20px;
+                font-size: 1rem;
+                border-radius: 6px;
+                border: none;
+                cursor: pointer;
+                background: #ff4d6d;
+                color: white;
+            }
+
+            #error {
+                color: #ff6b6b;
+                margin-top: 10px;
+            }
+            /* Brilhos */
+            #sparkles {
+                position: fixed;
+                inset: 0;
+                pointer-events: none;
+                overflow: hidden;
+                z-index: 0;
+            }
+
+            .sparkle {
+                position: absolute;
+                top: -10px;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                filter: blur(0.5px);
+                animation-name: fall, sway, fade;
+                animation-timing-function: linear, ease-in-out, ease-in-out;
+                animation-iteration-count: 1;
+            }
+
+            @keyframes sparkleFall {
+                0% {
+                    transform: translateY(0) translateX(0);
+                    opacity: 1;
+                }
+                80% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(110vh) translateX(var(--sway, 0px));
+                    opacity: 0;
+                }
+            }
+
+            @keyframes fall {
+                to {
+                    transform: translateY(110vh);
+                    /* opacity: 0; */
+                }
+            }
+            @keyframes sway {
+                0% {
+                    margin-left: 0;
+                }
+                50% {
+                    margin-left: 20px;
+                }
+                100% {
+                    margin-left: -20px;
+                }
+            }
+
+            @keyframes fade {
+                0% {
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 1;
+                }
+                90% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+            .main-svg {
+                width: 90vw;
+                max-width: 560px;
+                height: auto;
+                z-index: 2;
+                overflow: visible;
+            }
+
+            .arc-text {
+                font-family: "Segoe UI", sans-serif;
+                fill: white;
+                text-anchor: middle;
+                font-size: clamp(10px, 1vw, 12px);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="lock-screen">
+            <h2>💌 Só entra quem sabe a senha</h2>
+            <input type="password" id="password" placeholder="Digite a senha" />
+            <button onclick="checkPassword()">Entrar</button>
+            <p id="error"></p>
+        </div>
+
+        <div id="sparkles"></div>
+
+        <!-- SVG PRINCIPAL -->
+        <svg
+            class="main-svg"
+            viewBox="0 -40 200 380"
+            preserveAspectRatio="xMidYMid meet"
+        >
+            <defs>
+                <filter
+                    id="neonGlowText"
+                    filterUnits="objectBoundingBox"
+                    x="-50%"
+                    y="-50%"
+                    width="200%"
+                    height="200%"
+                >
+                    <feGaussianBlur stdDeviation="2" result="blur1" />
+                    <feGaussianBlur stdDeviation="4" result="blur2" />
+
+                    <feMerge>
+                        <feMergeNode in="blur2" />
+                        <feMergeNode in="blur1" />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+
+                <!-- Gradiente arco-íris animado -->
+                <linearGradient
+                    id="rainbowGradient"
+                    gradientUnits="userSpaceOnUse"
+                    x1="0"
+                    y1="0"
+                    x2="200"
+                    y2="0"
+                >
+                    <stop offset="0%" stop-color="#ff006e" />
+                    <stop offset="20%" stop-color="#ffbe0b" />
+                    <stop offset="40%" stop-color="#fdff00" />
+                    <stop offset="60%" stop-color="#00f5d4" />
+                    <stop offset="80%" stop-color="#4cc9f0" />
+                    <stop offset="100%" stop-color="#c77dff" />
+                </linearGradient>
+
+                <!-- NEON GLOW PESADO -->
+                <filter
+                    id="neonGlow"
+                    filterUnits="userSpaceOnUse"
+                    x="-30"
+                    y="-30"
+                    width="260"
+                    height="260"
+                >
+                    <feGaussianBlur stdDeviation="4" result="blur1" />
+                    <feGaussianBlur stdDeviation="8" result="blur2" />
+
+                    <feMerge>
+                        <feMergeNode in="blur2" />
+                        <feMergeNode in="blur1" />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+
+                <!-- Arcos de texto -->
+                <path id="bottomArc" d="M5 215 A170 170 0 0 0 195 215" />
+                <path id="topArc" d="M5 45 A170 170 0 0 1 195 45" />
+
+                <!-- Clip do coração -->
+                <clipPath id="heartClip" clipPathUnits="userSpaceOnUse">
+                    <path
+                        d="M100 185
+           C20 125, 20 55, 100 85
+           C180 55, 180 125, 100 185 Z"
+                    />
+                </clipPath>
+            </defs>
+
+            <!-- TEXTO SUPERIOR -->
+            <text class="arc-text" filter="url(#neonGlowText)">
+                <textPath href="#topArc" startOffset="50%" text-anchor="middle">
+                    ❤️ Surpresa, Bezoca! Te amo mais que tudo!
+                </textPath>
+            </text>
+
+            <!-- ARCO-ÍRIS -->
+
+            <!-- Arco-íris superior (ESQUERDA → DIREITA) -->
+            <path
+                d="M20 90 C60 30, 140 30, 180 90"
+                fill="none"
+                stroke="url(#rainbowGradient)"
+                stroke-width="16"
+                stroke-linecap="round"
+                stroke-dasharray="150 150"
+                filter="url(#neonGlow)"
+            >
+                <animate
+                    attributeName="stroke-dashoffset"
+                    from="300"
+                    to="0"
+                    dur="3s"
+                    repeatCount="indefinite"
+                />
+            </path>
+
+            <!-- Arco-íris inferior (DIREITA → ESQUERDA) -->
+            <path
+                d="M20 165 C60 225, 140 225, 180 165"
+                fill="none"
+                stroke="url(#rainbowGradient)"
+                stroke-width="16"
+                stroke-linecap="round"
+                stroke-dasharray="150 150"
+                filter="url(#neonGlow)"
+            >
+                <animate
+                    attributeName="stroke-dashoffset"
+                    from="0"
+                    to="300"
+                    dur="3s"
+                    repeatCount="indefinite"
+                />
+            </path>
+
+            <!-- CONTORNO DO CORAÇÃO -->
+            <path
+                class="heart-path"
+                d="M100 185
+   C20 125, 20 55, 100 85
+   C180 55, 180 125, 100 185 Z"
+                filter="url(#neonGlow)"
+            />
+
+            <!-- TEXTO INFERIOR -->
+            <text class="arc-text" filter="url(#neonGlowText)">
+                <textPath
+                    href="#bottomArc"
+                    startOffset="50%"
+                    text-anchor="middle"
+                >
+                    Lembre-se: Eu escolho você todos os dias ❤️
+                </textPath>
+            </text>
+        </svg>
+
+        <script>
+            const PASSWORD_HASH =
+                "2368978672a6dda13a8ad54b41468502476020473f6244e80bdc4160c71c5571";
+            const IMAGES = [
+                "https://res.cloudinary.com/dyhzkpkj4/image/upload/v1765905416/WhatsApp_Image_2025-12-16_at_13.40.15_tdzhad.jpg",
+                "https://res.cloudinary.com/dyhzkpkj4/image/upload/v1765914977/WhatsApp_Image_2025-12-16_at_13.40.15_euv2cn.jpg",
+                "https://res.cloudinary.com/dyhzkpkj4/image/upload/v1765914977/WhatsApp_Image_2025-12-16_at_13.40.16_1_ppe1dg.jpg",
+                "https://res.cloudinary.com/dyhzkpkj4/image/upload/v1765914977/WhatsApp_Image_2025-12-16_at_13.40.16_ghoemt.jpg",
+                "https://res.cloudinary.com/dyhzkpkj4/image/upload/v1765914957/be2_g9zypj.jpg",
+                "https://res.cloudinary.com/dyhzkpkj4/image/upload/v1765914957/be1_fcymax.jpg",
+            ];
+            async function sha256(text) {
+                const encoder = new TextEncoder();
+                const data = encoder.encode(text);
+                const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+                return [...new Uint8Array(hashBuffer)]
+                    .map((b) => b.toString(16).padStart(2, "0"))
+                    .join("");
+            }
+            async function checkPassword() {
+                const input = document.getElementById("password").value;
+                const error = document.getElementById("error");
+
+                const hash = await sha256(input);
+
+                if (hash === PASSWORD_HASH) {
+                    document.getElementById("lock-screen").style.display =
+                        "none";
+                    loadImages();
+                    // startSparkles();
+                    playMusic();
+                } else {
+                    error.textContent = "Senha incorreta 💔";
+                }
+            }
+            function loadImages() {
+                const svg = document.querySelector("svg");
+                const heartImage = document.createElementNS(
+                    "http://www.w3.org/2000/svg",
+                    "image"
+                );
+
+                heartImage.setAttribute("x", 20);
+                heartImage.setAttribute("y", 55);
+                heartImage.setAttribute("width", 160);
+                heartImage.setAttribute("height", 130);
+                heartImage.setAttribute("preserveAspectRatio", "xMidYMid meet");
+                heartImage.setAttribute("clip-path", "url(#heartClip)");
+                svg.appendChild(heartImage);
+
+                let index = 0;
+
+                function showNextImage() {
+                    heartImage.setAttribute("href", IMAGES[index]);
+                    heartImage.style.opacity = 0;
+
+                    // fade in
+                    heartImage.animate([{ opacity: 0 }, { opacity: 1 }], {
+                        duration: 1000,
+                        fill: "forwards",
+                    });
+
+                    // prepare next
+                    index = (index + 1) % IMAGES.length;
+                }
+
+                showNextImage(); // primeira imagem
+                setInterval(showNextImage, 4000); // troca a cada 4s
+            }
+
+            function startSparkles() {
+                const container = document.getElementById("sparkles");
+                const colors = [
+                    "#ff4d6d",
+                    "#ff9f1c",
+                    "#ffd166",
+                    "#06d6a0",
+                    "#4cc9f0",
+                    "#b5179e",
+                ];
+                const MAX_SPARKLES = 20;
+                const sparklesPool = [];
+
+                function createSparkle() {
+                    let s;
+                    if (sparklesPool.length < MAX_SPARKLES) {
+                        s = document.createElement("div");
+                        s.className = "sparkle";
+                        container.appendChild(s);
+                        sparklesPool.push(s);
+                    } else {
+                        // Reaproveitar sparkle mais antigo
+                        s = sparklesPool.shift();
+                        sparklesPool.push(s);
+                    }
+
+                    const size = Math.random() * 4 + 2;
+                    const sway = (Math.random() * 40 - 20).toFixed(2) + "px";
+                    const duration = (Math.random() * 3 + 3).toFixed(2) + "s";
+
+                    s.style.width = size + "px";
+                    s.style.height = size + "px";
+                    s.style.background =
+                        colors[Math.floor(Math.random() * colors.length)];
+                    s.style.boxShadow = `0 0 ${size * 2}px ${
+                        s.style.background
+                    }`;
+                    s.style.left = Math.random() * 100 + "vw";
+                    s.style.top = "-10px";
+                    s.style.setProperty("--sway", sway);
+
+                    // Reinicia a animação
+                    s.style.animation = "none";
+                    s.offsetHeight; // força reflow
+                    s.style.animation = `sparkleFall ${duration} linear forwards`;
+                }
+
+                setInterval(createSparkle, 300);
+            }
+
+            function playMusic() {
+                const audio = new Audio(
+                    "https://res.cloudinary.com/dyhzkpkj4/video/upload/v1765907263/Clean_Bandit_-_Symphony_feat._Zara_Larsson_yvzw2j.mp3"
+                );
+                audio.volume = 0.5;
+                audio.loop = true;
+                audio.currentTime = 34;
+                audio.play();
+            }
+        </script>
+        <iframe
+            id="yt-player"
+            width="0"
+            height="0"
+            src=""
+            allow="autoplay"
+            style="display: none"
+        ></iframe>
+    </body>
+</html>
