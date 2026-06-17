@@ -7,6 +7,13 @@
     "link": "https://github.com/htostes/quick-llm-extension"
   },
   {
+    "title": "Reservvo",
+    "description": "Platform that automates scheduling and customer confirmations for local service businesses",
+    "logo": "assets/reservvo.png",
+    "tags": ["SaaS", "Cloud", "Automation"],
+    "link": "https://www.reservvo.com/"
+  },
+  {
     "title": "Free Ebook of Open Source Tools",
     "description": "Coming soon...",
     "logo": "",
@@ -15,13 +22,6 @@
   },
   {
     "title": "Host your VPS Toolkit",
-    "description": "Coming soon...",
-    "logo": "",
-    "tags": ["Coming", "soon"],
-    "link": ""
-  },
-  {
-    "title": "Pinterest Scrapper Tool",
     "description": "Coming soon...",
     "logo": "",
     "tags": ["Coming", "soon"],
