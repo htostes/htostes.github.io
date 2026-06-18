@@ -5,7 +5,7 @@ export function renderArticles(selector, url) {
             const container = document.querySelector(selector);
             // Access the "items" array from the JSON data
             const articles = data.items;
-            container.innerHTML = articles
+            container.innerHTML += articles
                 .map((article) => {
                     // Create a temporary DOM element to parse the HTML content
                     const tempDiv = document.createElement("div");

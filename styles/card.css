@@ -47,6 +47,7 @@
 .article-card {
   border-radius: var(--radius);
   padding: var(--space);
+  margin-bottom: 1.0rem;
 }
 
 .article-card h3 {

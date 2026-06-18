@@ -5,7 +5,11 @@ import { renderSocials } from "./render-socials.js";
 renderProjects("#projects-grid", "data/projects.json");
 renderArticles(
     "#articles-grid",
-    "https://gist.githubusercontent.com/htostes/944f78563f246353ff7bef1d67900fb1/raw/medium.json"
+    "https://gist.githubusercontent.com/htostes/944f78563f246353ff7bef1d67900fb1/raw/medium.json",
+);
+renderArticles(
+    "#articles-grid",
+    "https://gist.githubusercontent.com/htostes/7cfbdd30ede38b8da919c65780fe5b7c/raw/paper.json",
 );
 renderSocials("#social-links", "data/socials.json");
 
