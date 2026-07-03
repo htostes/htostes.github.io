@@ -25,7 +25,7 @@ export function renderArticles(selector, url) {
                 <div class="article-card glass glass-sweep">
                     <h3>${article.title}</h3>
                     <p>${summary}</p>
-                    <a href="${article.link}" target="_blank">Ler mais</a>
+                    <a href="${article.link}" target="_blank">Read more</a>
                 </div>
             `;
                 })
