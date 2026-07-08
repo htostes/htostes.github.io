@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="styles/sidebar.css" />
         <link rel="stylesheet" href="styles/background.css" />
         <link rel="stylesheet" href="styles/glass.css" />
+        <link rel="stylesheet" href="styles/skills.css" />
         <script
             defer
             src="https://cloud.umami.is/script.js"
@@ -69,11 +70,19 @@
                     <a href="#" id="toggle-articles" class="toggle-link"
                         >Articles</a
                     >
+                    <a href="#" id="toggle-skills" class="toggle-link"
+                        >Skills</a
+                    >
                 </div>
                 <div class="cards one-column" id="projects-grid"></div>
                 <div
                     class="cards one-column"
                     id="articles-grid"
+                    style="display: none"
+                ></div>
+                <div
+                    class="cards one-column"
+                    id="skills-grid"
                     style="display: none"
                 ></div>
             </section>

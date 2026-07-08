@@ -1,0 +1,177 @@
+[
+    {
+        "name": "Python",
+        "category": "AI & Machine Learning",
+        "yoe": 5,
+        "description": "Primary programming language used across every role and project in my career. At Carefy, used Python for building and deploying ML classification models on clinical data, developing NLP pipelines for medical entity extraction, automating database deduplication processes (leading to a 24% reduction in support calls), and rebuilding ETL workflows with Prefect and multiprocessing that ran 2.3x faster. At A3Data, used Python to implement LLM-based architectures on AWS, build deployment frameworks that cut POC time-to-market by 50%, and implement multi-agent systems with observability. As a freelancer, used Python for self-hosted Whisper transcription systems, AI video generation pipelines, and various automation workflows integrated with n8n.",
+        "at": ["Carefy", "A3Data", "Freelance", "Real-time Chatbot in AWS"]
+    },
+    {
+        "name": "Machine Learning / Scikit-learn",
+        "category": "AI & Machine Learning",
+        "yoe": 4,
+        "description": "Used Scikit-learn and classical ML techniques throughout my data science career. At Carefy, developed tabular classification models on clinical data achieving 80%+ accuracy, with full pipelines covering feature engineering, cross-validation, hyperparameter tuning, and production deployment. These models served real healthcare decisions and were integrated into APIs handling 5000+ daily requests on GCP. Also applied ML techniques for freelance clients in automation and prediction contexts.",
+        "at": ["Carefy", "Freelance"]
+    },
+    {
+        "name": "Deep Learning / TensorFlow / PyTorch",
+        "category": "AI & Machine Learning",
+        "yoe": 3,
+        "description": "Led the development of 3 AI models at Carefy, including 2 leveraging Deep Learning techniques, and 1 focused on medical data classification. Used TensorFlow and PyTorch for model architecture design, training, and evaluation on domain-specific healthcare datasets. These models were integrated into production systems serving real clinical workflows.",
+        "at": ["Carefy"]
+    },
+    {
+        "name": "NLP / SpaCy",
+        "category": "AI & Machine Learning",
+        "yoe": 2,
+        "description": "Developed a production NLP model at Carefy to extract medical named entities from clinical text, enabling structured data extraction from unstructured hospital records. Used SpaCy for building text processing pipelines and entity recognition. Also applied NLP techniques in freelance projects involving document parsing and information extraction from legal and healthcare documents.",
+        "at": ["Carefy", "Freelance"]
+    },
+    {
+        "name": "LLMs & Generative AI",
+        "category": "AI & Machine Learning",
+        "yoe": 2,
+        "description": "At A3Data, architected and deployed a real-time LLM-based conversational chatbot on AWS using WebSockets and GraphQL, achieving agent response times under 3 seconds — a highly demanding latency target for LLM applications. Also implemented a multi-agent architecture with full observability on AWS using Kubernetes. As a freelancer, built a fully automated AI video generation pipeline using DeepSeek via Ollama, Kokoro TTS, and video APIs orchestrated through n8n. Built Quick LLM, a Chrome extension that connects to any OpenAI-compatible endpoint with predefined commands, streamlining repetitive AI tasks in the browser.",
+        "at": ["A3Data", "Freelance", "Real-time Chatbot in AWS", "Quick LLM"]
+    },
+    {
+        "name": "MLflow",
+        "category": "AI & Machine Learning",
+        "yoe": 2,
+        "description": "Used MLflow for experiment tracking, metric logging, and model versioning at both Carefy and A3Data. At Carefy, helped organize and compare multiple iterations of clinical ML models. At A3Data, integrated MLflow into deployment frameworks to maintain traceability of models across POC and production environments.",
+        "at": ["Carefy", "A3Data"]
+    },
+    {
+        "name": "Whisper / Audio Transcription",
+        "category": "AI & Machine Learning",
+        "yoe": 1,
+        "description": "As a freelancer, built a self-hosted audio transcription system for a legal office using OpenAI's Whisper model running locally. The system automatically transcribed audio recordings and generated structured PDF reports, replacing a fully manual process and saving significant hours of work for the legal team.",
+        "at": ["Freelance"]
+    },
+    {
+        "name": "AWS",
+        "category": "Cloud & MLOps",
+        "yoe": 3,
+        "description": "Designed and deployed complete end-to-end cloud architectures on AWS at A3Data. Built a real-time chatbot backend using Lambda, ECS Fargate, SQS, AppSync (GraphQL), and WebSockets, achieving LLM response times under 3 seconds. Used DynamoDB and RDS for data storage, CloudWatch for monitoring and observability, and VPC for secure model serving. Also developed a reusable Terraform-based deployment framework for data solutions that reduced POC time-to-market by 50%.",
+        "at": ["Carefy", "A3Data", "Real-time Chatbot in AWS"]
+    },
+    {
+        "name": "GCP",
+        "category": "Cloud & MLOps",
+        "yoe": 2,
+        "description": "Deployed and maintained production AI model APIs on Google Cloud Platform at Carefy. Built and served 3 API endpoints handling over 5000 requests per day, using Kubernetes for orchestration and scaling. Managed cloud infrastructure to ensure reliability and performance for healthcare applications with real clinical usage.",
+        "at": ["Carefy"]
+    },
+    {
+        "name": "Terraform",
+        "category": "Cloud & MLOps",
+        "yoe": 1,
+        "description": "At A3Data, wrote all Terraform code for provisioning AWS infrastructure for the real-time chatbot project, covering Lambda, ECS Fargate, SQS, RDS, DynamoDB, AppSync, and VPC. Also built a reusable Terraform-based framework for deploying data solutions across projects, which standardized infrastructure provisioning and cut POC delivery time from 1 month to 2 weeks — a 50% improvement in time-to-market.",
+        "at": ["A3Data", "Real-time Chatbot in AWS"]
+    },
+    {
+        "name": "Kubernetes",
+        "category": "Cloud & MLOps",
+        "yoe": 2,
+        "description": "Used Kubernetes for container orchestration across two companies. At Carefy, managed deployment of AI model APIs on GCP that served 5000+ daily requests, ensuring scalability and uptime. At A3Data, implemented a multi-agent LLM architecture with full observability on AWS using Kubernetes, managing pod lifecycles, resource allocation, and monitoring for production AI workloads.",
+        "at": ["Carefy", "A3Data"]
+    },
+    {
+        "name": "Docker",
+        "category": "Cloud & MLOps",
+        "yoe": 4,
+        "description": "Used Docker for containerizing applications consistently across all roles and projects. At Carefy, all ML models, APIs, and ETL processes were containerized for deployment on GCP. At A3Data, Docker was central to the deployment framework and Kubernetes-based architectures. As a freelancer, used Docker for self-hosted tools like Whisper and Ollama, ensuring reproducible and portable environments.",
+        "at": ["Carefy", "A3Data", "Freelance"]
+    },
+    {
+        "name": "CI/CD",
+        "category": "Cloud & MLOps",
+        "yoe": 3,
+        "description": "Applied CI/CD practices at A3Data as part of MLOps workflows, ensuring automated testing and deployment of data solutions. For Reservvo, set up GitHub Actions pipelines for continuous deployment to Vercel, enabling fast and reliable releases of the scheduling platform with zero manual deployment steps.",
+        "at": ["Carefy", "A3Data", "Reservvo"]
+    },
+    {
+        "name": "Git / Bitbucket",
+        "category": "Cloud & MLOps",
+        "yoe": 5,
+        "description": "Used Git for version control across every role and project throughout my career. At Carefy and A3Data, worked with team repositories on Bitbucket and GitHub, managing branches, pull requests, and code reviews. As a freelancer, maintained a public open-source repository for the Quick LLM Chrome extension on GitHub. All personal projects including Reservvo are fully versioned with Git.",
+        "at": ["Carefy", "A3Data", "USP", "Freelance", "Quick LLM", "Reservvo"]
+    },
+    {
+        "name": "SQL / MySQL",
+        "category": "Backend & Data",
+        "yoe": 5,
+        "description": "Used SQL extensively for querying, optimizing, and maintaining relational databases throughout my career. At Carefy, fine-tuned 10+ slow queries reducing execution time by over 62% — several went from 40+ seconds down to under 15 seconds. Helped design and model 4 new database tables for new product features, and maintained the production database over 3 years. In Reservvo, designed the full database schema on Supabase using SQL, modeling appointments, clients, professionals, and scheduling logic.",
+        "at": ["Carefy", "Reservvo", "USP"]
+    },
+    {
+        "name": "ETL / Prefect / Pipelines",
+        "category": "Backend & Data",
+        "yoe": 3,
+        "description": "At Carefy, rebuilt critical ETL pipelines using Prefect as the orchestration framework combined with Python multiprocessing, achieving a 2.3x speed improvement over the original implementation. Added observability to ETL runs for easier debugging and monitoring. Also automated 2 recurring data processes that previously required manual intervention, leading directly to a 24% reduction in support calls.",
+        "at": ["Carefy"]
+    },
+    {
+        "name": "API Development",
+        "category": "Backend & Data",
+        "yoe": 4,
+        "description": "Built production-grade APIs across multiple roles and stacks. At Carefy, developed 3 REST endpoints following best practices to serve AI models on GCP, collectively handling 5000+ requests per day. At A3Data, built a GraphQL API with WebSocket support on AWS AppSync for a real-time LLM chatbot achieving under 3 second response times. As a freelancer, built and integrated APIs across automation pipelines and AI tools. In Quick LLM, integrated with OpenAI-compatible API endpoints from a Chrome extension.",
+        "at": ["Carefy", "A3Data", "Real-time Chatbot in AWS", "Quick LLM"]
+    },
+    {
+        "name": "Supabase",
+        "category": "Backend & Data",
+        "yoe": 1,
+        "description": "Used Supabase as the primary backend-as-a-service for Reservvo, handling the full data layer including relational database (PostgreSQL), authentication, row-level security policies, and real-time subscriptions. Designed the entire schema from scratch to support scheduling, customer management, SMS reminders, and multi-professional configurations.",
+        "at": ["Reservvo"]
+    },
+    {
+        "name": "OCR / Document Parsing",
+        "category": "Backend & Data",
+        "yoe": 2,
+        "description": "At Carefy, built data extraction pipelines for hospital intake forms using Tesseract OCR combined with Pandas for image-based documents, and other Python libraries for parsing PDF and DOCX files. These pipelines enabled automated ingestion of structured clinical data from unstructured paper-based and digital forms, reducing manual data entry in healthcare workflows.",
+        "at": ["Carefy"]
+    },
+    {
+        "name": "Metabase / Dashboards",
+        "category": "Backend & Data",
+        "yoe": 3,
+        "description": "Built over 100 Metabase dashboards and panels at Carefy, serving 200+ daily active users across clinical and business teams. Dashboards covered operational metrics, patient data summaries, model performance tracking, and business KPIs. Worked closely with stakeholders to translate data needs into actionable visual reports.",
+        "at": ["Carefy"]
+    },
+    {
+        "name": "Next.js / TypeScript",
+        "category": "Frontend & Automation",
+        "yoe": 1,
+        "description": "Built Reservvo entirely from scratch using Next.js 15 and TypeScript as the full-stack framework. Implemented server and client components, API routes, and real-time features. Used TypeScript throughout to ensure type safety across the frontend, backend routes, and Supabase integration. The platform handles scheduling, automated SMS confirmations, appointment management, and a PWA experience for mobile users.",
+        "at": ["Reservvo"]
+    },
+    {
+        "name": "Vue.js",
+        "category": "Frontend & Automation",
+        "yoe": 2,
+        "description": "Developing the frontend of an intellectual property and patent management system at the University of São Paulo using Vue 3. Responsible for building component architecture, implementing CRUD interfaces for patent and agreement records, and refactoring previously read-only components into fully interactive features with form validation and state management.",
+        "at": ["USP"]
+    },
+    {
+        "name": "JavaScript / HTML",
+        "category": "Frontend & Automation",
+        "yoe": 2,
+        "description": "Built Quick LLM, a Chrome extension using vanilla JavaScript and HTML that connects to any OpenAI-compatible API endpoint. The extension allows users to trigger predefined AI commands directly from the browser without switching context. Designed the extension settings page, managed Chrome storage APIs, and handled async API communication. Also used JavaScript and HTML in various freelance automation and tooling projects.",
+        "at": ["Quick LLM", "Freelance", "USP"]
+    },
+    {
+        "name": "n8n",
+        "category": "Frontend & Automation",
+        "yoe": 2,
+        "description": "Used n8n as the core automation orchestration layer in multiple freelance projects. Built a fully automated AI video generation pipeline connecting n8n with DeepSeek (via Ollama for local inference), Kokoro TTS for voice synthesis, video generation APIs, and Baserow as a database backend — all running without manual intervention. Also explored integrations with GMass for email campaigns and Mobizon for SMS automation in the context of Reservvo outreach workflows.",
+        "at": ["Freelance", "Reservvo"]
+    },
+    {
+        "name": "Java / Spring",
+        "category": "Backend & Data",
+        "yoe": 2,
+        "description": "Developing the backend of an intellectual property and patent management system at the University of São Paulo using Java and Spring Boot. Responsible for building REST APIs, implementing business logic for patent lifecycle and agreement tracking, and integrating with the Vue.js frontend.",
+        "at": ["USP"]
+    }
+]
